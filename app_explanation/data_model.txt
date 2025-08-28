@@ -1,0 +1,52 @@
+Data Model
+
+users
+- id (pk)
+- name
+- email (unique index)
+- password hash
+- created_at
+- updated_at
+
+projects
+- id (pk)
+- name (index)
+- description
+- created_at
+- updated_at (index)
+
+project members
+- project_id, user_id (pk) (fk)
+- role (owner | member) (index)
+- created_at
+
+tasks
+- id (pk)
+- project_id (fk) (index)
+- title (index)
+- description
+- assignee_id (fk, user_id) (index) (nullable)
+- priority (low | medium | high | critical) (index)
+- status ( todo | in progress | review | done ) (index)
+- due_date (nullable) (index)
+- overdue (boolean) (default: false) (index)
+- created_at
+- updated_at (index)
+
+comments
+- id (pk)
+- task_id (fk) (index)
+- author_id (fk, user) (index)
+- body
+- created_at (index)
+
+Referential Actions
+- if project is deleted, project members with project is deleted
+- if user is deleted, project members with user is deleted
+- if project is deleted, tasks with project are deleted
+- if user is deleted, tasks assignee is set to null
+- if task is deleted, comments on task are deleted
+- if user is deleted, comment author is set to null
+
+Integrity
+- at least one owner per project

@@ -1,0 +1,39 @@
+Requirements:
+
+User section
+1. user can create user with name and email
+2. user can see list of all users
+3. user can see profile details
+
+Project Section
+4. user can create new projects with name and description
+    - user is automatically an owner
+5. project owner can add or remove team members to/from projects
+6. user can see all projects they are a part of (owner/team_member)
+7. user can see project details including team members and tasks
+8. owner can edit project info
+9. owner can delete project
+
+Task Section
+1. user can create tasks within projects with 
+    - title
+    - description
+    - assignee (only members in project)
+    - priority
+    - optional due date
+2. user can edit a task
+    - status: todo, in progress, review, done
+    - task details
+    - priority level: low, medium, high, critical
+    - assignee: only people in the project...
+    - mark overdue
+3. user can delete tasks
+4. user can filter tasks by project, status, assignee, priority, or due date
+5. sort tasks by various criteria
+
+Collaboration
+1. Add comments to tasks
+3. view all comments for a specific task
+    - display comment history with author name and timestamp
+
+

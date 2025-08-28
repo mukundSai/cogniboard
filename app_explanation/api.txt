@@ -1,0 +1,31 @@
+API
+
+User Endpoints
+- POST /users → Create User
+- GET /users → List User[]
+- GET /users/{userId} → Get User
+
+Project Endpoints
+- POST /projects → Create Project
+- GET /projects → List Project[] (user’s projects)
+- GET /projects/{projectId} → Get Project (with details)
+- PATCH /projects/{projectId} → Update Project
+- DELETE /projects/{projectId} → Delete Project
+
+Project Members
+- GET /projects/{projectId}/members → List User[]
+- POST /projects/{projectId}/members → Add Member
+- PATCH /projects/{projectId}/members/{userId} → Update Member role
+- DELETE /projects/{projectId}/members/{userId} → Remove Member
+
+Task Endpoints
+- POST /projects/{projectId}/tasks → Create Task
+- GET /projects/{projectId}/tasks → List Task[] (by project)
+- GET /tasks → List Task[] (global, with filters)
+- GET /tasks/{taskId} → Get Task
+- PATCH /tasks/{taskId} → Update Task
+- DELETE /tasks/{taskId} → Delete Task
+
+Comment Endpoints
+- POST /tasks/{taskId}/comments → Create Comment
+- GET /tasks/{taskId}/comments → List Comment[]
