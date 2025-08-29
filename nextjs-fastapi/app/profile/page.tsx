@@ -43,7 +43,7 @@ export default function ProfilePage() {
 
       // Count projects where user is a member
       const userProjects = projectsResponse.data.projects.filter(project => 
-        project.members.some(member => member.user_id === user?.id)
+        project.project_memberships.some(member => member.user_id === user?.id)
       );
 
       // Count tasks assigned to user

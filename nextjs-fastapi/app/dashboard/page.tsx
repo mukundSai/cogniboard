@@ -148,12 +148,12 @@ export default function DashboardPage() {
                         <div>
                           <h3 className="font-medium text-gray-900">{project.name}</h3>
                           <p className="text-sm text-gray-500">
-                            {project.members.length} members
+                            {project.project_memberships.length} members
                           </p>
                         </div>
                         <div className="flex items-center text-sm text-gray-500">
                           <Users className="h-4 w-4 mr-1" />
-                          {project.members.length}
+                                                      {project.project_memberships.length}
                         </div>
                       </div>
                     </Link>

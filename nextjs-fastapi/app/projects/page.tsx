@@ -147,7 +147,7 @@ export default function ProjectsPage() {
                   <div className="mt-4 flex items-center justify-between text-sm text-gray-500">
                     <div className="flex items-center gap-1">
                       <Users className="h-4 w-4" />
-                      <span>{project.members.length} members</span>
+                      <span>{project.project_memberships.length} members</span>
                     </div>
                     <div className="flex items-center gap-1">
                       <Calendar className="h-4 w-4" />

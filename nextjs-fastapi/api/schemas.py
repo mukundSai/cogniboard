@@ -94,7 +94,7 @@ class ProjectResponse(ProjectBase):
     id: int
     created_at: datetime
     updated_at: datetime
-    members: List[ProjectMemberResponse] = []
+    project_memberships: List[ProjectMemberResponse] = []
 
     class Config:
         from_attributes = True

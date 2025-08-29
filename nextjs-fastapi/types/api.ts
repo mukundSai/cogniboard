@@ -14,7 +14,7 @@ export interface Project {
   description?: string;
   created_at: string;
   updated_at: string;
-  members: ProjectMember[];
+  project_memberships: ProjectMember[];
 }
 
 export interface ProjectMember {
