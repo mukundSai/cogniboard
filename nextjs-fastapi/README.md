@@ -6,7 +6,7 @@ docker run --name pg16 \
   -e POSTGRES_USER=appuser \
   -e POSTGRES_PASSWORD=devpassword \
   -e POSTGRES_DB=appdb \
-  -p 5432:5432 \
+  -p 5435:5432 \
   -v pgdata:/var/lib/postgresql/data \
   -d postgres:16
 
