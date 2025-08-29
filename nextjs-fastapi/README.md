@@ -1,4 +1,17 @@
 To actually run:
 
 
-1. start up the db postgres 
+1. create docker (only first time)
+docker run --name pg16 \
+  -e POSTGRES_USER=appuser \
+  -e POSTGRES_PASSWORD=devpassword \
+  -e POSTGRES_DB=appdb \
+  -p 5432:5432 \
+  -v pgdata:/var/lib/postgresql/data \
+  -d postgres:16
+
+2. to stop docker
+docker stop pg16
+
+3. to start docker
+docker start pg16
