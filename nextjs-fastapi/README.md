@@ -1,6 +1,9 @@
 To actually run:
 
 
+debug with psql: psql "postgresql://appuser:devpassword@localhost:5435/appdb"
+
+
 1. create docker (only first time)
 docker run --name pg16 \
   -e POSTGRES_USER=appuser \

@@ -11,12 +11,23 @@ from schemas import UserCreate, UserLogin, Token, UserResponse
 from dependencies import get_current_user
 
 # Create FastAPI instance
+from fastapi.middleware.cors import CORSMiddleware
+
 app = FastAPI(
     title="CogniBoard API",
     description="AI-centric task/scrum board API",
     version="1.0.0",
     docs_url="/api/py/docs",
     openapi_url="/api/py/openapi.json"
+)
+
+# Allow CORS for all origins (adjust as needed for production)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Or specify allowed origins
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # Create database tables

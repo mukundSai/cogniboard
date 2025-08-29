@@ -1,4 +1,4 @@
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, joinedload
 from sqlalchemy import and_, or_
 from typing import List, Optional
 from datetime import datetime
@@ -66,13 +66,15 @@ def create_project(db: Session, project: ProjectCreate, owner_id: int) -> Projec
 
 def get_project_by_id(db: Session, project_id: int) -> Optional[Project]:
     """Get project by ID."""
-    return db.query(Project).filter(Project.id == project_id).first()
+    return db.query(Project).filter(Project.id == project_id).options(
+        joinedload(Project.project_memberships).joinedload(ProjectMember.user)
+    ).first()
 
 def get_user_projects(db: Session, user_id: int) -> List[Project]:
     """Get all projects where user is a member or owner."""
     return db.query(Project).join(ProjectMember).filter(
         ProjectMember.user_id == user_id
-    ).all()
+    ).options(joinedload(Project.project_memberships).joinedload(ProjectMember.user)).all()
 
 def update_project(db: Session, project_id: int, project_update: ProjectUpdate) -> Optional[Project]:
     """Update project details."""
